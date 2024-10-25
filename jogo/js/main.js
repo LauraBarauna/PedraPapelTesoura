@@ -8,16 +8,16 @@ function Jogo() {
     // Métodos
 
     this.iniciar = () => {
-        this.cliqueBotao()
+        this.cliqueBotao();
     }
 
-    this.logicaJogo = (valor) => {
+    this.logicaJogo = (valorUsuario) => {
         Array.prototype.aleatorio = function () {
             return this[Math.floor((Math.random() * this.length))];
         }
 
         const pedraPapelTesoura = ['pedra', 'papel', 'tesoura'];
-        let pedraPapelTesouraAleatorio = pedraPapelTesoura.aleatorio();
+        let valorBot = pedraPapelTesoura.aleatorio();
 
         const regras = {
             pedra: 'tesoura',
@@ -25,11 +25,11 @@ function Jogo() {
             tesoura: 'papel'
         }
         
-        if(valor === pedraPapelTesouraAleatorio){
+        if(valorUsuario === valorBot){
             this.inputResultado.value = 'Empate!';
             this.inputResultado.style.backgroundColor = 'blue';
             this.inputResultado.style.color = 'white';
-        } else if (regras[valor] === pedraPapelTesouraAleatorio) {
+        } else if (regras[valorUsuario] === valorBot) {
             this.inputResultado.value = 'Você venceu!';
             this.inputResultado.style.backgroundColor = 'green';
             this.inputResultado.style.color = 'white';
@@ -39,13 +39,13 @@ function Jogo() {
             this.inputResultado.style.color = 'white';
         }
 
-        this.input.value = pedraPapelTesouraAleatorio;
+        this.input.value = valorBot;
     }
 
     this.cliqueBotao = () => {
         this.botao.addEventListener('click', () => {
-            let valorSelect = this.select.value;
-            this.logicaJogo(valorSelect);
+            let valorUsuario = this.select.value;
+            this.logicaJogo(valorUsuario);
         })
     }
 }
