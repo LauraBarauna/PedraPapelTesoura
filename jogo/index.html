@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra Papel Tesoura</title>
+
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Jogo Pedra, Papel, Tesoura</h1>
+        <label for="player-choice">Escolha:</label>
+        <select id="player-choice">
+            <option value="pedra">Pedra</option>
+            <option value="papel">Papel</option>
+            <option value="tesoura">Tesoura</option>
+        </select>
+        <button class="btn">Jogar</button>
+       
+        <label for="bot-choice">Bot escolheu:</label>
+        <input type="text" id="bot-choice">
+
+        <label for="result" class="resultado">Resultado:</label>
+        <input  type="text" id="result">
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
